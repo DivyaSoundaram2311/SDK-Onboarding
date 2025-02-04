@@ -49,13 +49,14 @@
 
     <script>
         document.getElementById("launchSDK").addEventListener("click", function() {
-            const accessToken = "your_access_token";
-            const workflowId = "your_workflow_id";
-            const transactionId = "your_transaction_id";
+            const accessToken = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6InNuNW5xbiIsImhhc2giOiJkNzkwZGM4MzZmNDkwOTEzNmY4MmFjZjYyOWM3YTJhNzBmMGY1ZDQzZTVjN2NkYmRkMTFhMWE4ZmM0ZTExODZlIiwiaWF0IjoxNzM4Njc0ODE1LCJleHAiOjE3Mzg3MTgwMTUsImp0aSI6ImI0MTIwOTg2LTE5MzMtNDM1YS1hOWFmLTg3NGE1MjQ0Zjc2OSJ9.tnUgWbhSDkrWzl8V2g-L20Htzbji10S0O-TpfNlD2jQFMxLwMTcwowAt-CLNwlp-Q7Kfcx2pCvJphqXQEqkBJQkaCY4udp60sjgGf_NqhcfQkBfqldasuW-n3ff6uzlo1aVtDXptWwqAIUto_S-DD7lS7FpnV_uGwHML5CvqTfg";
+            const workflowId = "firstworkflow";
+            const transactionId = "asdfqwerzzxcv1234";
             
             const hyperKycConfig = new window.HyperKycConfig(accessToken, workflowId, transactionId);
             
             const handler = (HyperKycResult) => {
+                console.log(HyperKycResult);
                 switch (HyperKycResult.status) {
                     case "user_cancelled":
                         alert("User cancelled the process.");
